@@ -1,0 +1,85 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>690bc187-c009-4719-a3cd-28fce47f196c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Telegram-RAG-Bot.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Telegram-RAG-Bot</Name>
+    <RootNamespace>Telegram-RAG-Bot</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
+    <InterpreterId>Global|PythonCore|3.11</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ai_assistant.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="chromadb_py\chroma_fill_old.py" />
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="db.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="repositories.py" />
+    <Compile Include="Telegram-RAG-Bot.py" />
+    <Compile Include="experiments\db_tests.py" />
+    <Compile Include="experiments\exporters.py" />
+    <Compile Include="experiments\functional_tests.py" />
+    <Compile Include="experiments\llm_tests.py" />
+    <Compile Include="experiments\queue_tests.py" />
+    <Compile Include="experiments\runner.py" />
+    <Compile Include="handlers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="order_fsm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pyrogram_load\client_manager.py" />
+    <Compile Include="pyrogram_load\init_pyrogram.py" />
+    <Compile Include="pyrogram_load\load_generator.py" />
+    <Compile Include="pyrogram_load\rate_limiter.py" />
+    <Compile Include="sim_Telegram-RAG-Bot.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_ai_assistant.py" />
+    <Compile Include="tests\test_db_pipeline.py" />
+    <Compile Include="tests\test_repositories.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="experiments\" />
+    <Folder Include="chromadb_py\" />
+    <Folder Include="pyrogram_load\" />
+    <Folder Include="tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pytest.ini" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
