@@ -53,7 +53,8 @@
 <p>Used for open-ended consultations. Modeled as a Directed Acyclic Graph (DAG): normalization → classification → retrieval → context augmentation → generation.</p>
 
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4d79259a-31b1-462b-a2c8-726a313f8575" />
+![rag-pipe](https://github.com/user-attachments/assets/155744bc-8932-44c1-96ee-5a7f3a7ee337)
+
 
 
 <h3>2.2. Queuing Network Model (M/M/m)</h3>
