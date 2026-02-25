@@ -3,10 +3,14 @@
 <h1>Automated Customer Service System Architecture</h1>
 <p>This document outlines the theoretical justification, component selection, and structural synthesis of the automated customer service system. The system integrates a Telegram interface, a Large Language Model (LLM), and a hybrid database architecture using MongoDB and ChromaDB.</p>
 
+
+<img width="841" height="401" alt="image" src="https://github.com/user-attachments/assets/fc71f2a5-aba8-443d-8836-abe11520dbb3" />
+
+
 <h2>1. Theoretical Basis and Component Selection</h2>
 <p>The system architecture is driven by the need to balance stochastic generation (AI) with deterministic business logic, ensuring high reliability for critical operations like order processing while maintaining flexibility for general inquiries.</p>
 
-<h3>1.1. Large Language Model (LLM) Selection</h3>
+<h3>1.1. Large Language Model (LLM) Selection (Outdated. Need to review current benchmarks)</h3>
 <p>The core generative engine selected for this system is <strong>Gemini 2.5</strong> (Pro/Flash family). The selection process evaluated GPT-5, Gemini 2.5, and LLaMA 4 based on performance benchmarks and business constraints.</p>
 
 <ul>
@@ -47,6 +51,10 @@
 
 <h4>Generative Pipeline (RAG)</h4>
 <p>Used for open-ended consultations. Modeled as a Directed Acyclic Graph (DAG): normalization → classification → retrieval → context augmentation → generation.</p>
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4d79259a-31b1-462b-a2c8-726a313f8575" />
+
 
 <h3>2.2. Queuing Network Model (M/M/m)</h3>
 <p>The architecture is represented as an open network of service nodes to analyze response times ($T_{resp}$).</p>
