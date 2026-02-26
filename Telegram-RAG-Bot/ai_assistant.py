@@ -325,6 +325,7 @@ product_order, find_order, find_product, find_store, create_service_request, oth
 _default_assistant = AIAssistant()
 
 # Legacy function names for easier refactoring later if needed
+# Застарілі назви функцій для рефакторингу 
 gemini_call = _default_assistant.gemini_call
 vector_context_from_chroma = _default_assistant.vector_context_from_chroma
 vector_docs_from_chroma = _default_assistant.vector_docs_from_chroma
