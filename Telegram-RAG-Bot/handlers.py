@@ -142,6 +142,7 @@ class ChatHandler:
 
 Сформуй коротку, логічну відповідь українською на основі наведених семантично схожих товарів.
 """
+
                     reply = await gemini_call(user_id, prompt, True)
                     await message.reply(reply)
 
@@ -151,8 +152,10 @@ class ChatHandler:
         except Exception:
             traceback.print_exc()
             await message.reply("❌ Виникла внутрішня помилка. Спробуйте сформувати запит по іншому.")
+
+            
     async def handle_pagination_callback(self, callback_query: types.CallbackQuery):
-        """Handle pagination callbacks for this chat handler instance."""
+
         user_id = callback_query.from_user.id
         user_data = self.user_results.get(user_id)
 
